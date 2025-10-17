@@ -8,6 +8,8 @@ import Cart from './pages/Cart'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import AdminPanel from './pages/AdminPanel'
+import OrderSuccess from './pages/OrderSuccess'
+import Orders from './pages/Orders'
 import './App.css'
 
 
@@ -27,6 +29,8 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/admin" element={<AdminPanel />} />
+                <Route path="/order-success" element={<OrderSuccess />} />
+                <Route path="/orders" element={<Orders />} />
                 
               </Routes>
             </div>

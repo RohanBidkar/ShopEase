@@ -25,6 +25,9 @@ const cartReducer = (state, action) => {
           : item
       )
     
+    case 'CLEAR_CART':
+      return []
+    
     default:
       return state
   }
@@ -45,6 +48,10 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: 'UPDATE_QUANTITY', payload: { id: productId, quantity } })
   }
 
+  const clearCart = () => {
+    dispatch({ type: 'CLEAR_CART' })
+  }
+
   const getCartTotal = () => {
     return cart.reduce((total, item) => total + item.price * item.quantity, 0)
   }
@@ -59,6 +66,7 @@ export const CartProvider = ({ children }) => {
       addToCart,
       removeFromCart,
       updateQuantity,
+      clearCart,
       getCartTotal,
       getCartItemsCount
     }}>
