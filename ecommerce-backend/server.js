@@ -6,6 +6,7 @@ require('dotenv').config();
 const productRoutes = require('./routes/products');
 const userRoutes = require('./routes/users');
 const orderRoutes = require('./routes/orders');
+const seedRoutes = require('./routes/seed');
 
 const app = express();
 
@@ -22,6 +23,7 @@ mongoose.connect(process.env.MONGODB_URI)
 app.use('/api/products', productRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/orders', orderRoutes);
+app.use('/api/seed', seedRoutes);
 
 app.get('/', (req, res) => {
   res.json({ message: 'Ecommerce API is running!' });
